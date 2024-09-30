@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="bg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1554.0" style="-fx-background-color: #B17246;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GUIController">
+   <children>
+      <ImageView id="Train Station" fitHeight="450.0" fitWidth="255.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/1.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Main Street" fitHeight="240.0" fitWidth="600.0" layoutX="600.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/4.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Church" fitHeight="248.0" fitWidth="338.0" layoutX="600.0" layoutY="651.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/11.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Secret Hideout" fitHeight="225.0" fitWidth="600.0" layoutY="674.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/9.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="General Store" fitHeight="203.0" fitWidth="405.0" layoutX="195.0" layoutY="247.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/3.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Jail" fitHeight="248.0" fitWidth="346.0" layoutX="254.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/2.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Saloon" fitHeight="255.0" fitWidth="383.0" layoutX="600.0" layoutY="195.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/5.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="trailer" fitHeight="210.0" fitWidth="218.0" layoutX="982.0" layoutY="240.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/6.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="office" fitHeight="226.0" fitWidth="226.0" layoutY="449.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/7.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Ranch" fitHeight="248.0" fitWidth="375.0" layoutX="225.0" layoutY="449.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/8.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Bank" fitHeight="203.0" fitWidth="398.0" layoutX="600.0" layoutY="450.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/10.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Hotel" fitHeight="450.0" fitWidth="263.0" layoutX="937.0" layoutY="449.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/board/12.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <TableView fx:id="playerTable" layoutX="1204.0" layoutY="56.0" prefHeight="350.0" prefWidth="350.0" style="-fx-background-color: #EACBB3; -fx-base: #FFF5EC; -fx-font-size: 14pt;">
+        <columns>
+          <TableColumn fx:id="nameCol" editable="false" prefWidth="125.0" sortable="false" text="Name" />
+            <TableColumn fx:id="dollarsCol" editable="false" prefWidth="75.0" sortable="false" text="Dollars" />
+          <TableColumn fx:id="creditsCol" editable="false" prefWidth="75.0" sortable="false" text="Credits" />
+            <TableColumn fx:id="chipsCol" editable="false" prefWidth="75.0" sortable="false" text="Chips" />
+        </columns>
+      </TableView>
+      <ToolBar layoutX="1204.0" prefHeight="56.0" prefWidth="350.0" style="-fx-background-color: #EACBB3;">
+        <items>
+          <Button mnemonicParsing="false" onAction="#actPressed" prefHeight="35.0" prefWidth="50.0" style="-fx-background-color: #B17246;" text="Act" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#rehearsePressed" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #B17246;" text="Rehearse" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#upgradePressed" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #B17246;" text="Upgrade" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#endTurnPressed" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #B17246;" text="End turn" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+      <ImageView id="Crusty Prospector" fx:id="trainRole1" fitHeight="45.0" fitWidth="46.0" layoutX="114.0" layoutY="228.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Dragged by Train" fx:id="trainRole2" fitHeight="45.0" fitWidth="46.0" layoutX="50.0" layoutY="270.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Preacher with Bag" fx:id="trainRole3" fitHeight="45.0" fitWidth="46.0" layoutX="114.0" layoutY="321.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Cyrus the Gunfighter" fx:id="trainRole4" fitHeight="45.0" fitWidth="46.0" layoutX="48.0" layoutY="357.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w4.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Man in Overalls" fx:id="storeRole1" fitHeight="45.0" fitWidth="46.0" layoutX="236.0" layoutY="278.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Mister Keach" fx:id="storeRole2" fitHeight="45.0" fitWidth="46.0" layoutX="236.0" layoutY="360.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w3.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Prisoner In Cell" fx:id="jailRole1" fitHeight="45.0" fitWidth="46.0" layoutX="519.0" layoutY="26.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Feller in Irons" fx:id="jailRole2" fitHeight="45.0" fitWidth="46.0" layoutX="519.0" layoutY="107.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w3.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Railroad Worker" fx:id="streetRole1" fitHeight="45.0" fitWidth="46.0" layoutX="637.0" layoutY="24.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Falls off Roof" fx:id="streetRole2" fitHeight="45.0" fitWidth="46.0" layoutX="720.0" layoutY="24.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+      </ImageView>
+      <ImageView id="Woman in Black Dress" fx:id="streetRole3" fitHeight="45.0" fitWidth="46.0" layoutX="637.0" layoutY="106.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Mayor McGinty" fx:id="streetRole4" fitHeight="45.0" fitWidth="46.0" layoutX="720.0" layoutY="106.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w4.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Woman in Red Dress" fx:id="saloonRole1" fitHeight="45.0" fitWidth="46.0" layoutX="877.0" layoutY="278.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Reluctant Farmer" fx:id="saloonRole2" fitHeight="45.0" fitWidth="46.0" layoutX="877.0" layoutY="354.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Man Under Horse" fx:id="ranchRole1" fitHeight="45.0" fitWidth="46.0" layoutX="488.0" layoutY="525.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w3.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Shot in Leg" fx:id="ranchRole2" fitHeight="45.0" fitWidth="46.0" layoutX="412.0" layoutY="608.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Saucy Fred" fx:id="ranchRole3" fitHeight="45.0" fitWidth="46.0" layoutX="488.0" layoutY="608.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Clumsy Pit Fighter" fx:id="hideoutRole1" fitHeight="45.0" fitWidth="46.0" layoutX="435.0" layoutY="720.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Thug with Knife" fx:id="hideoutRole2" fitHeight="45.0" fitWidth="46.0" layoutX="522.0" layoutY="720.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Dangerous Tom" fx:id="hideoutRole3" fitHeight="45.0" fitWidth="46.0" layoutX="435.0" layoutY="809.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w3.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Penny, who is lost" fx:id="hideoutRole4" fitHeight="45.0" fitWidth="46.0" layoutX="522.0" layoutY="809.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w4.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Flustered Teller" fx:id="bankRole1" fitHeight="45.0" fitWidth="46.0" layoutX="912.0" layoutY="470.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w3.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Suspicious Gentleman" fx:id="bankRole2" fitHeight="45.0" fitWidth="46.0" layoutX="912.0" layoutY="555.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Dead Man" fx:id="churchRole1" fitHeight="45.0" fitWidth="46.0" layoutX="857.0" layoutY="730.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Crying Woman" fx:id="churchRole2" fitHeight="45.0" fitWidth="46.0" layoutX="859.0" layoutY="810.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Sleeping Drunkard" fx:id="hotelRole1" fitHeight="45.0" fitWidth="46.0" layoutX="1111.0" layoutY="470.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Faro Player" fx:id="hotelRole2" fitHeight="46.0" fitWidth="46.0" layoutX="1044.0" layoutY="509.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Falls from Balcony" fx:id="hotelRole3" fitHeight="45.0" fitWidth="46.0" layoutX="1111.0" layoutY="557.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w2.png" />
+         </image>
+      </ImageView>
+      <ImageView id="Australian Bartender" fx:id="hotelRole4" fitHeight="45.0" fitWidth="46.0" layoutX="1045.0" layoutY="596.0" onDragDropped="#dropped" onDragOver="#draggingOver" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <SepiaTone level="0.0" />
+         </effect>
+         <image>
+            <Image url="@assets/dice/w3.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
